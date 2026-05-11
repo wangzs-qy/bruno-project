@@ -1,12 +1,12 @@
 meta {
-  name: 修改
+  name: 导入
   type: http
-  seq: 3
+  seq: 5
 }
 
 post {
-  url: {{Gateway_Host_Ib}}/api/duty/taxes-bank-account-info/edit
-  body: json
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-bank-account-info/import
+  body: multipartForm
   auth: apikey
 }
 
@@ -18,13 +18,16 @@ auth:apikey {
 
 body:json {
   {
-    "id": "20780694-0B1F-4BBF-98C6-78E86CB15AE3",
     "clu": "FJO",
-    "stn": "FOS",
+    "stn": "QZH",
     "accountName": "中外运－敦豪国际航空快件有限公司泉州分公司",
     "account": "414358379412",
     "bankName": "中国银行泉州筍江支行",
     "currencyCode": "人民币",
     "remark": "中文全角"
   }
+}
+
+body:multipart-form {
+  file: @file(C:\Users\Administrator\Desktop\银行账号信息.xlsx)
 }

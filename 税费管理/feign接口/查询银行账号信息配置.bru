@@ -1,0 +1,36 @@
+meta {
+  name: 查询银行账号信息配置
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryBankAccountInfo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "bankAccountInfoList": [
+      {
+        "dutyAcct": "967534035",
+        "dutyAcctType": "CREDIT"
+      },
+      {
+        "dutyAcct": "609000005",
+        "dutyAcctType": "CREDIT"
+      },
+      {
+        "dutyAcct": "DUTYCNSJW",
+        "dutyAcctType": "CASH"
+      }
+    ]
+  }
+}

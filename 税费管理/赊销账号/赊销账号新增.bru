@@ -5,23 +5,24 @@ meta {
 }
 
 post {
-  url: {{Gateway Host Ib}}/api/duty//taxes-credit-tariff-account/save-credit-account
+  url: {{Gateway_Host_Ib}}/api/duty//taxes-credit-tariff-account/save-credit-account
   body: json
   auth: apikey
 }
 
 auth:apikey {
   key: X-User-Token
-  value: {{cicp_token}}
+  value: {{cicp_token_ib}}
   placement: header
 }
 
 body:json {
   {
-      "creditAccount": "967534035",
-      "freightAssociatedAccount": "605319657",
-      "localFacility": "TSFHTD,SAWEAT,KULEKL",
-      "special": 0,
-      "remark": "备数"
+    "creditAccount": "967534035",
+    "freightAssociatedAccount": "605319657",
+    "localFacility": "TSFHTD,SAWEAT,KULEKL",
+    "special": 0,
+    "stn": "FOS",
+    "remark": "备数"
   }
 }

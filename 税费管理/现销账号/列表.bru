@@ -1,11 +1,11 @@
 meta {
-  name: 赊销关税账号列表
+  name: 列表
   type: http
   seq: 1
 }
 
 post {
-  url: {{Gateway_Host_Ib}}/api/duty//taxes-credit-tariff-account/paginated-list
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-cash-tariff-account/cash-account-list
   body: json
   auth: apikey
 }
@@ -20,12 +20,8 @@ body:json {
   {
     "pageNum": 1,
     "pageSize": 50,
-    "creditAccount": "",
-    "freightAssociatedAccount": "",
-    "creditAccount": "",
-    "localFacility": "",
-    "special": null,
-    "nextFlag": false,
+    "cashAccount": "",
+    "facilityCode": "BJSSJW",
     "sort": [
       //         {
       //             "field": "localFacility",

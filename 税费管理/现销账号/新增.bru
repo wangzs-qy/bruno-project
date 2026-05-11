@@ -1,0 +1,27 @@
+meta {
+  name: 新增
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty//taxes-cash-tariff-account/save-cash-account
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "cashAccount": "DUTYCNLHW",
+    "facilityCode": "BJSSJW",
+    "facilityName": "石家庄",
+    "stn": "FOS",
+    "remark": "备数"
+  }
+}

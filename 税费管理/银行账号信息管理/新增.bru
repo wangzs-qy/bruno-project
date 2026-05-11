@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{Gateway_Host_Ib}}/api/duty/taxes-clearance-outOfScope/save
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-bank-account-info/save
   body: json
   auth: apikey
 }
@@ -18,10 +18,12 @@ auth:apikey {
 
 body:json {
   {
-    "gtwId": "ANY",
-    "customerCode": "0100",
-    "tradeMode": "ANY",
-    "marginGuarantee": "ANY",
-    "reductionReasons": 3
+    "clu": "FJO",
+    "stn": "QZH",
+    "accountName": "中外运－敦豪国际航空快件有限公司泉州分公司",
+    "account": "414358379412",
+    "bankName": "中国银行泉州筍江支行",
+    "currencyCode": "人民币",
+    "remark": "中文全角"
   }
 }

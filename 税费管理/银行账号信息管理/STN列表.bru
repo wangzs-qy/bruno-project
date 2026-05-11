@@ -1,11 +1,11 @@
 meta {
-  name: 下载模板
+  name: STN列表
   type: http
-  seq: 3
+  seq: 6
 }
 
-get {
-  url: {{Gateway_Host_Ib}}/api/duty//taxes-credit-tariff-account/download-template
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-bank-account-info/list-stn
   body: none
   auth: apikey
 }

@@ -1,0 +1,28 @@
+meta {
+  name: 编辑
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty//taxes-cash-tariff-account/edit-cash-account
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "id": "7F55CE6E-F825-4884-B2EB-7348305A2BEE",
+    "cashAccount": "DUTYCNSJW",
+    "facilityCode": "BJSSJW",
+    "facilityName": "石家庄",
+    "stn": "FOS",
+    "remark": "备数"
+  }
+}

@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{Gateway_Host_Ib}}/api/duty/taxes-clearance-outOfScope/delete
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-bank-account-info/delete
   body: json
   auth: apikey
 }
@@ -17,9 +17,7 @@ auth:apikey {
 }
 
 body:json {
-  {
-    "ids": [
-      "FB30DBAD-9E6C-4E74-93E1-3A229DECDE46"
-    ]
-  }
+  [
+    "24DFA9E0-CC13-458D-A2C2-C6E8DCB1B8A1"
+  ]
 }
