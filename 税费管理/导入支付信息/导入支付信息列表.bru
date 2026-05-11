@@ -1,0 +1,26 @@
+meta {
+  name: 导入支付信息列表
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/listImportPaymentInfo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTczMTQzNjgzMX0.HaLkpMoZnyd8pAgy6VNAGVL0QjH5LFLcf56w64ed0eYfkjI4JB3GROg-wZEdc0SXdKzHgXYyKV29NSmt_Bpi3RDddyZVQGBWZsoBcpZWybDyn9xZ2hd_L9hFtqg6tVMmS_GMiWBPjHnl3sjq5X7UgjJQmShOMDWeUFHKq5njjWK0XE2tjSLsu5yIXcJGOH2sXNrRqZt39KdQP0xlxkMjx4bnKa5j2p_OeKoQZfHdWnbGZH4iCUszpcuIYL9u7dDUxp8vWAkmjk2g_OUaKu-No48A-QrgpCqWsFCIiwLd2VCJn2VNmOkNjp5uJTb_FeLl7t5wMctfU0jwF0DdEo7CLA
+  placement: header
+}
+
+body:json {
+  {
+      "fileName": "1105980017_1.xlsx",
+      "importType": 2,
+      "pageSize": 10,
+      "pageNum": 1
+  }
+}

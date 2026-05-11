@@ -1,0 +1,22 @@
+meta {
+  name: 分运单信息（税费）、分运单实征税费信息、预估税费信息、分运单联系人信息
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host}}/api/base//expressDetail/query/findWaybillDetail?declarationHeaderId=4e06b1d0-513b-45dd-8b5e-ca50ae774706&declarationWaybillId=80c7e5f5-7c5a-45f8-9724-b9cb5933c0ed&archive=history
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 4e06b1d0-513b-45dd-8b5e-ca50ae774706
+  declarationWaybillId: 80c7e5f5-7c5a-45f8-9724-b9cb5933c0ed
+  archive: history
+  ~archive: live
+}
+
+headers {
+  sensitive: sensitive
+}

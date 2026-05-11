@@ -1,0 +1,32 @@
+meta {
+  name: 深圳-制单分配看板导出
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/export/dashboard/exportSouthEditor
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["CANGTW", "XNMGTW", "CTUGTW", "WUHGTW"],
+    "editorName": ""
+  }
+}

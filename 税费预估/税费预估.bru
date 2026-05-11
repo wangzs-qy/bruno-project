@@ -1,0 +1,23 @@
+meta {
+  name: 税费预估
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/calculate/calculateImportTax
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "headerId": "1d80ae1f-3519-4c2c-9c4b-76e9766acca7"
+  }
+}

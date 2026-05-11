@@ -1,0 +1,36 @@
+meta {
+  name: 北方区列表统计
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/dashboard/decEdit/queryNorthernDistrict
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["PEKGTW"],
+    "startTime": "2026-03-23 00:00",
+    "endTime": "2026-03-23 13:38",
+    "editorName": "wangzs",
+    "pageNum": 1,
+    "pageSize": 200
+  }
+}

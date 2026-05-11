@@ -1,0 +1,22 @@
+meta {
+  name: 设置费用调整额度配置
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/set-fee-adjustment-limit?itemValue=1.34&gtwId=CANGTW
+  body: none
+  auth: apikey
+}
+
+params:query {
+  itemValue: 1.34
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

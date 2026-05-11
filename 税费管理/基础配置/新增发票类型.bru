@@ -1,0 +1,27 @@
+meta {
+  name: 新增发票类型
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/add-invoice-type
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "gtwId": "CANGTW",
+      "declarationType": "B",
+      "clearanceType": "B1",
+      "feeName": "关税",
+      "invoiceType": 0
+  }
+}

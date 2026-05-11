@@ -1,0 +1,23 @@
+meta {
+  name: 无纸化单据
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Gateway Host}}/api/base/decDetail/query/getPaperlessEdocList?declarationHeaderId=4e06b1d0-513b-45dd-8b5e-ca50ae774706&archive=live
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 4e06b1d0-513b-45dd-8b5e-ca50ae774706
+  archive: live
+  ~archive: history
+}
+
+body:json {
+  {
+      "declarationHeaderId" : "0020AC3F-F89A-4C2C-82CE-665E17953854"
+  }
+}

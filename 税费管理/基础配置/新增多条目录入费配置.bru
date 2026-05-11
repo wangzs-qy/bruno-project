@@ -1,0 +1,26 @@
+meta {
+  name: 新增多条目录入费配置
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/add-multi-entry-fee
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyNzc1NTAwOX0.CCUL-ogn-mVlITNkm3FFpZUK51krDqcR5dhM_oS7g2yx2YYXeG05ODlKmEIN3nb-PLx2OzO3R8Qptg_AHVNOTdpAI0dns-3I9VnfzEy9DJVKmiULnOq_bv8qK_lST_txS-P_BaCcINvjywAnu1dG2Ts_0xI5mNYf8ebVf5o3jCmKbq-raJ69lnPMtVKxrjhdhTPiwXWd1CCFvtKYd5l5frIJNVMYr7tEvvqSPOJnfIgVBS9QShJllUGT4-Ru7YC2gXRbIoTQotCZEvMH2iGEF4Ul1YNZiorLgi-vS0El9PtrI73Vb1MJa94mVq1JODwzvcPKSh4h9Pe48HQCCpeK2A
+  placement: header
+}
+
+body:json {
+  {
+      "declarationType": "D",
+      "threshold": 10,
+      "chargeStandard": 10,
+      "gtwId": "PEKGTW"
+  }
+}

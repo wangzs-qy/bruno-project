@@ -1,0 +1,23 @@
+meta {
+  name: ccdi查询
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/queryCcdi?declarationWaybillId=54f5bda8-c7e7-4186-8c2a-be77717ac6ac&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 54f5bda8-c7e7-4186-8c2a-be77717ac6ac
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

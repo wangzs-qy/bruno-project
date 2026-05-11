@@ -1,0 +1,36 @@
+meta {
+  name: 编辑配置
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/high-value/unit-conversions/edit
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "id":"733CB286-9140-4107-940C-90590D467A60",
+    "gtwId": "PVGHUB",
+    "unitCode": "007",
+    "unitName": "个",
+    "conversionRate": 1002,
+    "relationUnitCode": "054"
+  }
+}

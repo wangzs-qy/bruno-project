@@ -1,0 +1,34 @@
+meta {
+  name: 北亚-制单分配看板导出
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/export/dashboard/exportPvgEditor
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["PVGHUB"],
+    "editorName": "",
+    "pageNum": 1,
+    "pageSize": 200
+  }
+}

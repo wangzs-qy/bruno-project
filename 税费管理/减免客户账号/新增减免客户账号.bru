@@ -1,0 +1,33 @@
+meta {
+  name: 新增减免客户账号
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-reduction-account/save
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTczMDg0Mzk3NX0.AuBRT-X_ZLiBZQgNE4jMQS8AzhQ_AS5pi9OwXA_l60NdPYhcAvVG1fyUBkORPF-BUALDBumm0tjmJjm85McMdHW6kbSHXcGbxtGkgKZz-09qKhpSvcQA7lyIOev7FU297nCnn1ABlxXNZKUXeJdL4p7lYG3ZFiKxZJP-b9TTXScX9_EtcQ2by43rgMSmUmEi-yqEGoRb9SvA0Srmja7TI0K8jG5gjdKQ4-QQpIi4dfEGCF5MXT6x0DAc_GaRvWClfKAYlFYi3VUEO4S97LTDtqZuHY_nkPyIJRy3YC0LtRlhwFhsIbk8jYMtakSC0obKjyzt_1OJPb8-f4u12U0dfg
+  placement: header
+}
+
+body:json {
+  {
+      "paymentAccount": "111222335",
+      "query": "",
+      "reductionStatus": 0,
+      "company": "DHL公司",
+      "reductionItem": "BN",
+      "reductionMode": 0,
+      "reductionDiscount": "10",
+      "currency": "CNY",
+      "cpaId": "",
+      "effectTime": "2024-11-04T09:31:58.430Z",
+      "expireTime": ""
+  }
+}

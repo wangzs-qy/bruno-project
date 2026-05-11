@@ -1,0 +1,36 @@
+meta {
+  name: 查询运单日志列表
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Gateway Host}}/api/base/waybillQuery/querySystemLogList
+  body: json
+  auth: none
+}
+
+params:query {
+  ~awbNo: 8329436614
+  ~archive: history
+  ~archive: live
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 10,
+    "startTime": "",
+    "endTime": "",
+    "gtwIdList": [],
+    "sort": [
+      {
+        "field": "",
+        "isAsc": 0
+      }
+    ],
+    "awbNo": "8329436614",
+    "primaryTypeList": [],
+    "archive": "history"
+  }
+}

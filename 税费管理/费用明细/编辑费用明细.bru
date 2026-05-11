@@ -1,0 +1,30 @@
+meta {
+  name: 编辑费用明细
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/edit
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyNjg4NjkzM30.Dp-eWRPLUxluhhaGeKgBpS7t-NlGHpgF5Lg9WebiiF2934bmdMnSCzqQZXIL27t6ejn0Jojaa5WqyjELS_ik9TddQK11qk8368Jjdvigm1c46HQdkmQQOqGAOnOrtiigEBxM-hORyoxBmL7phiJCGFH8Wisz77qcxWCLj_oxiPMd-Kzxh5MeYWk5DrD8oUm6AlW86rsG8Jpr64xntOpEL-LdgetcAu_f1sUpNfnlg84eUb9eAG8fgWXMyM2rfhykogf5oXAjpTr1Sz4nbT9UWAhp3pDuemqoWX6X5-vKVQ58tFKgIDMgt4UXVKRXXswFt_0c8vcDGUPXaALxsmATeA
+  placement: header
+}
+
+body:json {
+  {
+      "taxesInfoId": "6A41EA0F-15E9-41C3-8D03-C580D81C1FEF",
+      "expenseId": "2E626B90-1F91-452D-80C6-302EEF0C8A00",
+      "declarationHeaderId": "f3015077-ca2a-4929-9882-05269c0a174a",
+      "lcaCode": "PGC2D15",
+      "feeName": "行邮税",
+      "invoiceType": 1,
+      "feeAmount": "120",
+      "remark": null
+  }
+}

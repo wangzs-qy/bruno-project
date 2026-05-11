@@ -1,0 +1,31 @@
+meta {
+  name: 列表
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-no-adc/paged-list
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "paymentAccounts": [
+          
+      ],
+      "company": "",
+      "id": "774A53C6-DC12-43AA-972A-487766969687",
+      "enable": null,
+      "nextFlag": false
+  }
+}

@@ -1,0 +1,24 @@
+meta {
+  name: 取消导入支付信息
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/cancelImportPayment
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "fileName": "C改D类.xlsx",
+      "importType": 1
+  }
+}

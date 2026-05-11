@@ -1,0 +1,23 @@
+meta {
+  name: 查询运单进程表头
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/base/waybillQuery/ib/queryWaybillProcessHeader?declarationWaybillId=ca364f5a-e527-46b2-8d61-c647c3d171b9&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: ca364f5a-e527-46b2-8d61-c647c3d171b9
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "税费管理",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

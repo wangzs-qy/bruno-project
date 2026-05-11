@@ -1,0 +1,18 @@
+meta {
+  name: 进口运单清关日志查询
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/clearanceLogQuery/ib?declarationWaybillId=0320832f-1118-4399-99cb-32996498b665&archive=history&awbNo=1239838316
+  body: none
+  auth: none
+}
+
+params:query {
+  declarationWaybillId: 0320832f-1118-4399-99cb-32996498b665
+  archive: history
+  awbNo: 1239838316
+  ~archive: live
+}

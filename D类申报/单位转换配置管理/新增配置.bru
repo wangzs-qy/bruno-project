@@ -1,0 +1,36 @@
+meta {
+  name: 新增配置
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/high-value/unit-conversions/add
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "id":"",
+    "gtwId": "PVGHUB",
+    "unitCode": "007",
+    "unitName": "个",
+    "conversionRate": 1000,
+    "relationUnitCode": "054"
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 运单查询出口
+  seq: 1
+}
+
+auth {
+  mode: none
+}
+
+script:pre-request {
+  if (bru.getEnvVar("User Token")) {
+  	req.getHeaders().add({
+      	key: 'x-user-token',
+          value: bru.getEnvVar("User Token"),
+      })
+  //     console.log(pm.request)
+  }else {
+      console.warn("没有User Token")
+  }
+}

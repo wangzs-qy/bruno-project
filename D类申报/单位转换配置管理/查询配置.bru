@@ -1,0 +1,33 @@
+meta {
+  name: 查询配置
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Gateway_Host_Ob}}/api/high/ob/high-value/unit-conversions/queryByUnitCodeAndGtwId?gtwId=PVGHUB&unitCode=007
+  body: none
+  auth: apikey
+}
+
+params:query {
+  gtwId: PVGHUB
+  unitCode: 007
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 10
+  }
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 统计总分单数、总件数、总重量
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/numberStatistics
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "businessType": "C",
+    "gtwId": "PVGHUB",
+    "taskStatus": 5,
+    "declarationMawbIdList": [
+      "2D5F07C8-045C-4CCD-BF42-1C642422187F"
+    ],
+    "awbNoList": []
+  }
+}

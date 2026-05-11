@@ -1,0 +1,24 @@
+meta {
+  name: 编辑仓库位置
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/editWarehouseLocation
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "waybillId": "bdc682e0-861a-4c93-97c1-3b8dc96a268e",
+    "warehouseLocation": 2
+  }
+}

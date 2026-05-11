@@ -1,0 +1,17 @@
+meta {
+  name: 获取在线申报运单详情信息
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/find-wiplus-waybill-archive-info?awbNo=5199492023&archive=history
+  body: none
+  auth: none
+}
+
+params:query {
+  awbNo: 5199492023
+  archive: history
+  ~archive: live
+}

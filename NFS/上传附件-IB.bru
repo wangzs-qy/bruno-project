@@ -1,0 +1,30 @@
+meta {
+  name: 上传附件-IB
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/file/temp/temp-upload
+  body: multipartForm
+  auth: apikey
+}
+
+headers {
+  x-request-id: 34584953-f9ce-46f0-a1b6-c6d215561981
+  ~Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJGSUxFLUFSQ0hJVkUtQVBJIiwiaWF0IjoxNzE1ODI4ODkxLCJleHAiOjE3MTU4MzI0OTEsImRobF9pbWQiOiJ7XCJ1aWRcIjpcInNydl9jbmV4cF9jZGNwX3VhdFwifSJ9.ymeUFmVMFrUvP4fAERdYKk6J2rXwXJuSDqvYMVTldxpwS42ruDs0gVPePamHfXvpLGQqp3DLoUB7xYPa0w3Ntw
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:multipart-form {
+  templateCode: REDUCTION_ACCOUNT
+  user: system
+  overwrite: Y
+  moduleCode: DUTY
+  file: @file(C:\Users\Administrator\Desktop\减免客户账号导入模板.xlsx)
+}

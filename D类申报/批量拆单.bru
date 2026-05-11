@@ -1,0 +1,46 @@
+meta {
+  name: 批量拆单
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/highvalue/dec/batchSplitDec
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "type": 1,
+    "tab": "editAll",
+    "confirmSplit": 0,
+    "splitItemDtos": [
+      {
+        "awbNo": "6003244214",
+        "splitAwbNo": "600324421401",
+        "packNoStr": "2",
+        "grossWtStr": "2",
+        "splitCount": 2
+      },
+      {
+        "awbNo": "6003244214",
+        "splitAwbNo": "600324421402",
+        "packNoStr": "2",
+        "grossWtStr": "2",
+        "splitCount": 2
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

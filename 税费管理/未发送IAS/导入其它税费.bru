@@ -1,0 +1,21 @@
+meta {
+  name: 导入其它税费
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/pending-ias-info/importOtherTaxes
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:multipart-form {
+  file: @file(C:\Users\Administrator\Desktop\导入税费模板 1.xlsx)
+}

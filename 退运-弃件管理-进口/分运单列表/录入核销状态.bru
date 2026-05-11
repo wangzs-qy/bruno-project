@@ -1,0 +1,26 @@
+meta {
+  name: 录入核销状态
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/abnormal/ib/discardWaybill/enterMainfestStatus
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTczMjkxNDU3Mn0.oklyQW11o3DasLlw5OOfWOg6Mh382eETshBikbFyTsNqN4UoKau_QzcyITKjDNTqP6UAQn0LHqAEgWXfKhD-NIVGiKQVEousRIwK2wklTYk_cFyi1AZ-r7WFoIdU3KO-N_HQ4O9Qg0M58F_b2Mjp0CLTI38YWUEwlkLdW06teQErjJGVwwYu7XcYXVx_aoqujhayimtZbxSzEIM2HSonBx8CH_OLvyamX0d-I8yIMFEOyUoHyF33N3-2-S-r0kHjhPAO5-_RuBSV6kKDmIqHu9N30FJX0SDvlM0pZm9lSIK8VeIA2FkwXBqt4iQEjj8Aj9gXtaUWgYS5DWFaVa9SCQ
+  placement: header
+}
+
+body:json {
+  {
+      "idList": [
+          "D4CD0359-0289-41B9-844F-96B13A29372C"
+      ],
+      "manifestWriteOffStatus": 2
+  }
+}

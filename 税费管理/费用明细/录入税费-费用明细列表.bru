@@ -1,0 +1,21 @@
+meta {
+  name: 录入税费-费用明细列表
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/listByAwbNo?awbNo=6274013340
+  body: none
+  auth: apikey
+}
+
+params:query {
+  awbNo: 6274013340
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyOTIxMDc1Mn0.dszY4QjuuTVnVdY5kYV5XVUY9j_zKnYOLbUhVUAJLcJC38leaJyMvxFBcrQUbENS4iodGtHQC6L0bfskIj8w7JPTZ1ygAUsTGBsZjRTK3XyyRRoKr86GDjkTZ5o6D-aKQr1rPFYKyZhltebMyHn3msMp-MTP-0ZQ1hKY2yZ-ly3uV74MgbcNXvIs5xcGky_HRTX4plFua_-rKB-P-GgXpdu0DH0yJ5QtZ8McDRcfXj8OwtwC5nijF4tNWtM2WkqU15KOPKrifo_qclEPSYmDNpYSAq-8V1Sirq1FV27MSxZTy0KcazsJQjgJs3RZT_cIY1CZPPL6417Swggmrdup_A
+  placement: header
+}

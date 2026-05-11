@@ -1,0 +1,25 @@
+meta {
+  name: 分运单-收件人详情
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/duty-common/recipientInfoDetail?declarationWaybillId=03f70be0-0303-4438-bdc9-5b7970e64a0d
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 03f70be0-0303-4438-bdc9-5b7970e64a0d
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

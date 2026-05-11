@@ -1,0 +1,32 @@
+meta {
+  name: 任务自动流转
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/automaticTaskFlow
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "waybillTaskList": [
+      {
+        "declarationWaybillId": "b2739730-54aa-4286-8fd7-5f9b4f45947d",
+        "currentTaskNo": "IbOsd20250618326052948105035776"
+      }
+    ],
+    "targetModule": "IbCsa",
+    "flowReason": "123123",
+    "isAuto": 1,
+    "sourceModule": "IbOsd"
+  }
+}

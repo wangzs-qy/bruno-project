@@ -1,0 +1,17 @@
+meta {
+  name: 导出减免客户账号信息 copy
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-reduction-account/export-other
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

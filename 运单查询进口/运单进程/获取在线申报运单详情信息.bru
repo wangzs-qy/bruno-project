@@ -1,0 +1,22 @@
+meta {
+  name: 获取在线申报运单详情信息
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/find-wiplus-waybill-info?awbNo=4352681712&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  awbNo: 4352681712
+  archive: live
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

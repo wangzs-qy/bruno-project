@@ -1,0 +1,21 @@
+meta {
+  name: 税费详情
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/duty-common/detail?taxesInfoId=7063E3FF-D9D0-4C6C-9DAA-D4D3F1E588EB
+  body: none
+  auth: apikey
+}
+
+params:query {
+  taxesInfoId: 7063E3FF-D9D0-4C6C-9DAA-D4D3F1E588EB
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

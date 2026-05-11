@@ -1,0 +1,25 @@
+meta {
+  name: 设置费用调整通知邮箱配置
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/set-fee-adjustment-notice
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "gtwId": "CANGTW",
+      "to": "wangzs@dhl.com",
+      "cc": "wangzs1@dhl.com"
+  }
+}

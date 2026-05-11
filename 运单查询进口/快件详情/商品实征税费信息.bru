@@ -1,0 +1,17 @@
+meta {
+  name: 商品实征税费信息
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Gateway Host}}/api/base//expressDetail/query/ib/goodsTaxInfo?declarationHeaderId=4e06b1d0-513b-45dd-8b5e-ca50ae774706&archive=history
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 4e06b1d0-513b-45dd-8b5e-ca50ae774706
+  archive: history
+  ~archive: live
+}

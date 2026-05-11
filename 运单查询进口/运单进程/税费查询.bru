@@ -1,0 +1,23 @@
+meta {
+  name: 税费查询
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/queryTaxesDetail?declarationWaybillId=b5ad7aa3-2af9-4887-8ac8-39a7375f96b5&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: b5ad7aa3-2af9-4887-8ac8-39a7375f96b5
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

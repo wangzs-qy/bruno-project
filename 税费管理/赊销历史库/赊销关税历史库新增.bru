@@ -1,0 +1,31 @@
+meta {
+  name: 赊销关税历史库新增
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-credit-tariff-his/save-credit-tariff-data
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "creditAccount": "609001037",
+    "awbNo": "",
+    "companyName": "TYCOELECTRONICSSHANGHAICOLTD;ksjjj",
+    "companyAddress": "BUILDING5NO1528GUMEIROADCAOHEJINGSHANGHAICHINASHANGHAI.,./kk",
+    "billingDate": "2018-06-07",
+    "senderAccount": "876543434",
+    "paymentAccount": "878765454",
+    "conditionNature": "",
+    "contacts": "12345646"
+  }
+}

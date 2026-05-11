@@ -1,0 +1,28 @@
+meta {
+  name: 新增费用明细
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/add
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesInfoId": null,
+      "declarationHeaderId": "025a316a-a3da-408a-844e-46580f65e395",
+      "lcaCode": "DTYY08",
+      "feeName": "112项关税",
+      "invoiceType": 0,
+      "feeAmount": "10"
+  }
+}

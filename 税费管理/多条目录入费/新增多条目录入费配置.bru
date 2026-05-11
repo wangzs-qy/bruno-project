@@ -1,0 +1,25 @@
+meta {
+  name: 新增多条目录入费配置
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-manage/add-multi-entry-fee
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "clearanceType": "A",
+    "threshold": 1,
+    "chargeStandard": 1
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: 出口生成服务间TOKEN
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/manage/openApi/auth/generateServerToken
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "consumerCode": "abnormal-ob",
+      "consumerKey": "z1kqq29do5vkj58nppc0"
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      var jsonData = res.getBody();
+      console.log(jsonData)
+      bru.setGlobalEnvVar("cicp_server_token_ob", jsonData.data.token);
+  });
+}

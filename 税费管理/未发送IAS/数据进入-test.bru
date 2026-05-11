@@ -1,0 +1,21 @@
+meta {
+  name: 数据进入-test
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/duty/duty-common/testDataIn?declarationWaybillId=81d15ca8-f1cc-45bf-9cec-bbe327534270
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 81d15ca8-f1cc-45bf-9cec-bbe327534270
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

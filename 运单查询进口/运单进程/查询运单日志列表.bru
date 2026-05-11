@@ -1,0 +1,36 @@
+meta {
+  name: 查询运单日志列表
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/base/waybillQuery/ib/querySystemLogList
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 10,
+    "startTime": "",
+    "endTime": "",
+    "gtwIdList": [],
+    "sort": [
+      {
+        "field": "",
+        "isAsc": 0
+      }
+    ],
+    "awbNo": "6274011785",
+    "primaryTypeList": [],
+    "archive": "live"
+  }
+}

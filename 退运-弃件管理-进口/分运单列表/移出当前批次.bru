@@ -1,0 +1,23 @@
+meta {
+  name: 移出当前批次
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/abnormal/ib/discardWaybill/removeDiscardBatch
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  [
+      "270D0946-5A48-42B0-823B-E7230491D036"
+  ]
+}

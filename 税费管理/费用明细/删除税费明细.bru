@@ -1,0 +1,27 @@
+meta {
+  name: 删除税费明细
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/delete
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "expenseIdList": [
+          "0FF79A1D-3C28-44EC-BFAA-531BDCFBE085",
+          "54599C58-583C-4B24-B9D9-B1E92F36E97F"
+      ]
+  
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: 分运单-收件人详情 Copy
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/duty-common/dataIn?declarationHeaderId=254a41dd-bb36-4345-90c4-d871da60d19c
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationHeaderId: 254a41dd-bb36-4345-90c4-d871da60d19c
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

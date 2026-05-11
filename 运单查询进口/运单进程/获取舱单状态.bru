@@ -1,0 +1,23 @@
+meta {
+  name: 获取舱单状态
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/queryWaybillProcessHeader?declarationWaybillId=87545578-dcf4-4be1-b62d-0d8a7e355f62&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 87545578-dcf4-4be1-b62d-0d8a7e355f62
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

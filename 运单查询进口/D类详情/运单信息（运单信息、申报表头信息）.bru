@@ -1,0 +1,24 @@
+meta {
+  name: 运单信息（运单信息、申报表头信息）
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/decDetail/query/ib/getWayBillHead?declarationHeaderId=7a52cb8c-364c-4e0d-9a19-8302d2dc1eb1&declarationWaybillId=f8271181-bb5e-4a09-8ffb-9c0f5629c845&archive=live
+  body: json
+  auth: apikey
+}
+
+params:query {
+  declarationHeaderId: 7a52cb8c-364c-4e0d-9a19-8302d2dc1eb1
+  declarationWaybillId: f8271181-bb5e-4a09-8ffb-9c0f5629c845
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

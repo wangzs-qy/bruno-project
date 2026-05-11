@@ -1,0 +1,53 @@
+meta {
+  name: 列表统计
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/submission/stockUpStatistics?gtwId=PVGHUB
+  body: none
+  auth: apikey
+}
+
+params:query {
+  gtwId: PVGHUB
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 200,
+    "taskStatus": 5,
+    "nextFlag": false,
+    "confirmOrderTimeStart": "",
+    "confirmOrderTimeEnd": "",
+    "confirmOrderUser": "",
+    "warehouseLocation": null,
+    "pdCntnCd": "",
+    "glPdCntnCd": "",
+    "businessType": "C",
+    "declarationMawbIdList": [],
+    "awbNoList": [],
+    "declarationMawbNoList": [
+      "54658180509"
+    ],
+    "checkMoldList": [],
+    "flightNoList": [],
+    "thirdPartyMarkingMarklist": [],
+    "stockStatusList": [],
+    "clearanceTypeList": [],
+    "clearanceSubTypeList": [],
+    "clearanceStatusList": [],
+    "selfPickUp": null,
+    "holdPapers": null,
+    "tradeName": "",
+    "gtwId": "PVGHUB"
+  }
+}

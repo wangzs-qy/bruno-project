@@ -1,0 +1,27 @@
+meta {
+  name: 表头列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/declareBorderFlight/queryAllHeader
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "flightDate": "",
+    "pageNum": 1,
+    "pageSize": 50,
+    "nextFlag": false,
+    "gtwId": "PVGHUB"
+  }
+}

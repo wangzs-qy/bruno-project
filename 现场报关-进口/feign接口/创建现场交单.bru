@@ -1,0 +1,32 @@
+meta {
+  name: 创建现场交单
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/service/abnormal/ib/declare/submissonRest/addSubmissionTaskBatch
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "taskIdDtoList": [
+      {
+        "declarationWaybillId": "f61a9c05-1473-4ba6-b93d-5679b2eb38cc",
+        "taskNo": "IbEsdp20250821349287371973656576",
+        "flowCount": 1,
+        "flowReason": "交单",
+        "flowRemark": "pwdasdas"
+      }
+    ],
+    "sourceModule": "IbEsdp"
+  }
+}

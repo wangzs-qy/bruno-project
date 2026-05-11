@@ -1,0 +1,21 @@
+meta {
+  name: 赊销账号历史导入
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-credit-tariff-his/import-tariff-his
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:multipart-form {
+  file: @file(/C:/Users/Administrator/Desktop/赊销关税历史库导入模板-重复数据.xlsx)
+}

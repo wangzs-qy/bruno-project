@@ -1,0 +1,17 @@
+meta {
+  name: 多条目录入费配置列表
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-manage/get-multi-entry-fee
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

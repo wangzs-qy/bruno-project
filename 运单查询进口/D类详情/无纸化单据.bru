@@ -1,0 +1,23 @@
+meta {
+  name: 无纸化单据
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/decDetail/query/ib/getPaperlessEdocList?declarationHeaderId=022e25de-0f2f-40a5-9394-21d2f2a725c9&declarationWaybillId=81c97bdf-ed29-49ca-a09b-4d6cb47c26c5&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationHeaderId: 022e25de-0f2f-40a5-9394-21d2f2a725c9
+  declarationWaybillId: 81c97bdf-ed29-49ca-a09b-4d6cb47c26c5
+  archive: live
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyNzgwMjgyOX0.DerE80mcZlHfnuV05mES5l-F46HdppkPCyH47SGdhVTZXcXXkiJUQPhWgaBJhxfysRRvuf3C8XVMgVzXs_tXqrYpGntcviGgs80GCCDZUCXlWHu23qnPl9fedHsUenKXirUaNJtxcgFpvROH0sA0FV8FixQt-6ej4j2ea3mS-ml6-GKxJDewup3sZVKFw2llIX8vmWDgU56g8KSzl_iv45VqRwl70Yjhnq8wjGCfyN5lcytVXn9Aa-qmnq6KD5IKpFk-lsTOlJooMTlBs-vdc0ptynl4vwNTYToDYusgXPYTWy3hMJIWDnKPjLMg2yVkrntN1B7XfebJxcFNCd3PWA
+  placement: header
+}

@@ -1,0 +1,33 @@
+meta {
+  name: 制单完成
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/highvalue/dec/editComplete
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "declarationHeaderId": "f2df56e3-9d6e-414d-947b-6cfc959e5b00",
+    "preGtwId": "CANGTW",
+    "completeCheck": true,
+    "matchMawb": false,
+    "needVerify": false,
+    "logicCheckConfigList": []
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,30 @@
+meta {
+  name: 录入查验结果
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/borderInspection/enterCheckResult
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {"clearanceTypeList":[],"gtwId":"CANGTW"}
+}
+
+body:multipart-form {
+  enterCheckResultDto: {"awbNoList":["1019242114","6354022430"],"checkModel":1,"resaultRemark":"123456","checkResult":1,"gtwId":"CANGTW"} @contentType(application/json)
+  ~declareCheckFiles: @file(C:\Users\Administrator\Desktop\8480335010.jpg)
+}
+
+body:file {
+  file: @file()
+}

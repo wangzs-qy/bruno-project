@@ -1,0 +1,34 @@
+meta {
+  name: 表体列表
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/borderInspection/queryAllBody
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 50,
+    "nextFlag": false,
+    "gtwId": "CANGTW",
+    "declarationMawbIdList": [
+      "1D7FC2F2-FD58-4DF1-928C-3DC863907C7F"
+    ],
+    "clearanceTypeList": [],
+    "awbNoList": [],
+    "declarationMawbNoList": [],
+    "flightNoList": [],
+    "thirdPartyMarkingMarklist": []
+  }
+}

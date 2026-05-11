@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "运单查询进口",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

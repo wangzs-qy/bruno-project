@@ -1,0 +1,25 @@
+meta {
+  name: EXP306回执列表 Copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/listExp306SummaryEntryInfo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTc0Nzg2MTc4NH0.Z3423F98oaY2Gsvv2jC5bwaA3-x8iieF4z2VLqW0QurxewGpcdB2Cxg-l_nfedtxedwOvNOBEQpJByrcoqhGhvryNAoL3ArrTfTOn3iR1XX1UD2eUttHf4k_qzsr-HMi0pBSEV7yZiEwQrz7hLVBCfSs_byLYOHdzQYNamj20wkPv2G78L5DFZXwc88cKARxj2UyoMvj7LrfhffCmCd67j9FW5HAQBfH-zD24897VYU8KwBhH6TPi6TZQZfG7UwHHCTxW0rT-FLlch7aNV7iDE76ZjVTBDHS8kfUmtivgRsU2OMu-_zrBAnYalqeqhlL2Fuoo4HCzw5aXxOpKkRvvg
+  placement: header
+}
+
+body:json {
+  {
+      "pageSize": 10,
+      "pageNum": 1,
+      "exp306SummaryInfoId": "3F7CD079-AAF9-4009-8D2D-7DCAC052DF14"
+  }
+}

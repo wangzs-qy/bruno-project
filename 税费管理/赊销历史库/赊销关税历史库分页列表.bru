@@ -1,0 +1,30 @@
+meta {
+  name: 赊销关税历史库分页列表
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-credit-tariff-his/pagination-query
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageSize": 50,
+      "pageNum": 1,
+      "sort": [
+          {
+              "field": "billingDate",
+              "isAsc": 0
+          }
+      ]
+  }
+}

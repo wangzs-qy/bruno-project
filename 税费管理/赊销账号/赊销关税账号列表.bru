@@ -1,0 +1,36 @@
+meta {
+  name: 赊销关税账号列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty//taxes-credit-tariff-account/paginated-list
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "creditAccount": "",
+      "id": "B42EFD1E-118E-43C6-90FD-C0B7A61B2CC4",
+      "freightAssociatedAccount": "",
+      "localFacility": "",
+      "special": null,
+      "nextFlag": false,
+      "sort": [
+          {
+              "field": "localFacility",
+              "isAsc": 1
+          }
+      ]
+  }
+}

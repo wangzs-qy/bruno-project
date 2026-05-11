@@ -1,0 +1,30 @@
+meta {
+  name: 查询豁免基础数据
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryExemptManagement
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "exemptManagementCodeList": [
+      {
+        "code": "0130",
+        "reductionItem": "BN",
+        "gtwId": "CANGTW"
+      }
+    ],
+    "type": 2
+  }
+}

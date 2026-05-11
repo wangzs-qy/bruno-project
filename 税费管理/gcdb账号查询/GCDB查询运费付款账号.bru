@@ -1,0 +1,17 @@
+meta {
+  name: GCDB查询运费付款账号
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/payment-account/check/965549570
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

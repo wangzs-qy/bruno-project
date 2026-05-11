@@ -1,0 +1,28 @@
+meta {
+  name: 新增
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-financial-lock-account/add
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "account": "950307076",
+      "cName": "测试公司111",
+      "area": "NLO",
+      "cluster": "NEO",
+      "station": "DLC",
+      "effectTime": "2025-04-26"
+  }
+}

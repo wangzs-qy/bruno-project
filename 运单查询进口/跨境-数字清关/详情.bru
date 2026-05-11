@@ -1,0 +1,35 @@
+meta {
+  name: 详情
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/base/crossBorderDetail/query/ib/detail
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: live
+  ~module: IB_CROSS_BORDER
+  ~declarationWaybillId: cd47b8f9-d6c8-4b24-a6cc-d08615360422
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "archive": "live",
+      "module": "IB_DIGITAL_CLEARANCE",
+      "declarationWaybillId": "2ae9290b-2427-4427-be1b-36c09687503d"
+  }
+}

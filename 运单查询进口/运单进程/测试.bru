@@ -1,0 +1,38 @@
+meta {
+  name: 测试
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/base/waybillQuery/ib/test
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "declarationWaybillId": "60ccf084-b17f-4580-8e81-48c5563a6dda",
+      "locationModule": 1,
+      "locationProcess": 1,
+      "taskStatus": 1,
+      "ldapUuid": null,
+      "taskStartTime": "2025-11-25 11:32:51",
+      "taskEndTime": null,
+      "scene": 1,
+      "currentTaskNo": "IbDap20251125383943114626498560",
+      "targetTaskNo": null,
+      "buryType": 2,
+      "awbNo": null,
+      "taskCirculation": 0,
+      "suffixAwbNo": null
+    }
+  ]
+}

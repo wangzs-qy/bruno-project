@@ -1,0 +1,21 @@
+meta {
+  name: 数据同步-test
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/duty-common/dataSync?declarationWaybillId=ceeb394e-3e97-47d0-9bd1-dcae5f6fbe53
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: ceeb394e-3e97-47d0-9bd1-dcae5f6fbe53
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

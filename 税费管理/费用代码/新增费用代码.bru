@@ -1,0 +1,40 @@
+meta {
+  name: 新增费用代码
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-fee-code/add-fee-code
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesName": "",
+      "receiptTaxFiled816": "",
+      "receiptTaxFiled310": "",
+      "receiptTaxFiled306": "",
+      "lcaCode": "TEST",
+      "iasFeeCode": "TEST",
+      "feeCode": "XL",
+      "feeName": "测试2",
+      "invoiceType": 0,
+      "feeNature": "测试",
+      "declarationType": "A",
+      "applicableGtw": "XMNGTW;CTUGTW",
+      "feeDtp": 0,
+      "showVoucher": 0,
+      "iasDescription": "APO",
+      "effectTime": "2024-09-14T06:59:22.951Z",
+      "expireTime": "",
+      "feeRemark": ""
+  }
+}

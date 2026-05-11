@@ -1,0 +1,26 @@
+meta {
+  name: 删除No Adc Copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-no-adc/save-no-adc-info
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTczMTAxNjk5MH0.heqwfXvWY6Lq5W72KabEQXE7zXuLzXQ8pB27G7K9fQRMdQzxn1A07QKM52W37g8CujMQcWb6pHYNBY9zfo2EOAaUr5kodb6CXggtEgGUonEB4xcuESuXA5QXyZclEvI9LApXg88SafyVMetR1RgUl8aIZ_MYj9O2zwSS6anb-ZOSrOGWQYM8Qx8BhLicsrg4HfL9IzI6Jddi5b85pKey2KVw_M95kbEONkRtTCgJ_oh_jyCkqUHryHeHj-kpdB17KiKjfapnqyV-UDU7X9ycZ1UQZsjTTWUwWRDnKZRDzJDtB2ULNN0pbl5d6mnjuD05-BvSxgevRaPIBeogWdOrVQ
+  placement: header
+}
+
+body:json {
+  {
+      "paymentAccount": "111111111",
+      "query": "",
+      "company": "DHL公司",
+      "enable": 1
+  }
+}

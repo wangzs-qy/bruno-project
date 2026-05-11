@@ -1,0 +1,39 @@
+meta {
+  name: 费用代码列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-fee-code/pagination-list
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "lcaCode": "",
+      "iasFeeCode": "",
+      "id": "000ACDDE-798E-4C58-96E4-2C8DD1DDDD45",
+      "feeCode": "",
+      "feeName": "",
+      "feeNature": "",
+      "declarationType": "",
+      "applicableGtw": "",
+      "nextFlag": false,
+      "sort": [
+          {
+              "field": "receiptTaxFiled306",
+              "isAsc": 1
+          }
+      ]
+  }
+}

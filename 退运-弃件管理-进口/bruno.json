@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "退运/弃件管理-进口",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

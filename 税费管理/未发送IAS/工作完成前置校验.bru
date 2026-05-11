@@ -1,0 +1,25 @@
+meta {
+  name: 工作完成前置校验
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/pending-ias-info/taskCompletedCalibration
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesIdList": [
+          "34660F1F-2B7B-4412-A6AF-426D0A776C9C"
+      ]
+  }
+}

@@ -1,0 +1,23 @@
+meta {
+  name: 查询流程信息
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/queryWaybillProcess?declarationWaybillId=000a64da-7406-47a7-96a5-80f4fab1d930&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 000a64da-7406-47a7-96a5-80f4fab1d930
+  archive: live
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

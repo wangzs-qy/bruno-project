@@ -1,0 +1,37 @@
+meta {
+  name: 编辑减免客户账号
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-reduction-account/edit
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "id": "CBC6A111-5D5D-4B8A-BF87-EAED7EABE99C",
+    "paymentAccount": "600059464",
+    "company": "DHL",
+    "reductionDiscount": "10%",
+    "currency": "USD",
+    "reductionMode": 1,
+    "reductionItem": "WE",
+    "reductionStatus": 0,
+    "cpaId": null,
+    "effectTime": "2026-04-06",
+    "expireTime": "2026-04-07",
+    "updateTime": "2026-03-31 17:15:56",
+    "updateUser": "wangzs",
+    "allowEdit": false,
+    "query": ""
+  }
+}

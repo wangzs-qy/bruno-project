@@ -1,0 +1,27 @@
+meta {
+  name: 查询赊销关税账号基础数据
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryCreditTariffAccount
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "customerCompanyUsciList": [],
+    "creditAccountList": [
+      "111111111",
+      "222222222"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+meta {
+  name: 未发送IAS列表
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/pending-ias-info/listNotSendIas
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 50,
+    "nextFlag": false,
+    "iasSendTimeStart": "2024-11-04 00:00:00",
+    "iasSendTimeEnd": "2024-11-06 23:59:59",
+    "statusList": [
+      0,
+      1,
+      3
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: 导入赊销关税历史库记录列表-临时
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-credit-tariff-his/import-record-list-temp
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

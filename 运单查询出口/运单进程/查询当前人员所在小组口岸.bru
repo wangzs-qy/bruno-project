@@ -1,0 +1,21 @@
+meta {
+  name: 查询当前人员所在小组口岸
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/find-user-group-gtw?taskType=EXPRESS
+  body: none
+  auth: apikey
+}
+
+params:query {
+  taskType: EXPRESS
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

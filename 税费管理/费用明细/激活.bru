@@ -1,0 +1,23 @@
+meta {
+  name: 激活
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/activate
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "texesId": "002B7EF7-DE4B-4C6E-ACCC-8831C7217C44"
+  }
+}

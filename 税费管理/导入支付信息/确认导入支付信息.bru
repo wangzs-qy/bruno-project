@@ -1,0 +1,25 @@
+meta {
+  name: 确认导入支付信息
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/confirmImportPayment
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "fileName": "其它.xlsx",
+      "importType": 4,
+      "paymentPort": "SZXGTW"
+  }
+}

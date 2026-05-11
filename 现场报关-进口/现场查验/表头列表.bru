@@ -1,0 +1,36 @@
+meta {
+  name: 表头列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/queryAllHeader
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 50,
+    "taskStatus": 5,
+    "nextFlag": false,
+    "confirmOrderTimeStart": "",
+    "confirmOrderTimeEnd": "",
+    "confirmOrderUser": "",
+    "warehouseLocation": null,
+    "pdCntnCd": "",
+    "glPdCntnCd": "",
+    "businessType": "C",
+    "declarationMawbIdList": [],
+    "declarationMawbNoList": [],
+    "gtwId": "PVGHUB"
+  }
+}

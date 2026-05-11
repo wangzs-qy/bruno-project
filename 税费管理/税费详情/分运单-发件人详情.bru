@@ -1,0 +1,39 @@
+meta {
+  name: 分运单-发件人详情
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/duty-common/senderInfoDetail?declarationWaybillId=03f70be0-0303-4438-bdc9-5b7970e64a0d
+  body: json
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 03f70be0-0303-4438-bdc9-5b7970e64a0d
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "declarationWaybillId": "e6f29e5f-17ac-4607-b451-0ef90a9fe618",
+      "locationModule": 6,
+      "locationProcess": 13,
+      "taskStatus" : 1,
+      "ldapUuid": "wangzs",
+      "taskStartTime": "2024-08-13 13:25:23",
+      "scene": 1,
+      "currentTaskNo": "IOsi20240711202135486776188928",
+      "buryType": 2
+  }
+}

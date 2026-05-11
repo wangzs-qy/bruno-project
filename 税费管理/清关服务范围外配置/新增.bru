@@ -1,0 +1,27 @@
+meta {
+  name: 新增
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-clearance-outOfScope/save
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwId": "ANY",
+    "customerCode": "0100",
+    "tradeMode": "ANY",
+    "marginGuarantee": "ANY",
+    "reductionReasons": 3
+  }
+}

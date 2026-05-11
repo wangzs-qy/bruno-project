@@ -1,0 +1,25 @@
+meta {
+  name: 标记已导出
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/pending-ias-info/markerExported
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesIdList": [
+          "7F31731F-65BB-48EC-BB9B-564A7107095B"
+      ]
+  }
+}

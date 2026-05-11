@@ -1,0 +1,30 @@
+meta {
+  name: 查询清关服务范围外配置
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryClearanceOutOfScopeConfig
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "clearanceOutOfScopeList": [
+      {
+        "gtwId": "CANGTW",
+        "customerCode": "",
+        "tradeMode": "",
+        "marginGuarantee": ""
+      }
+    ]
+  }
+}

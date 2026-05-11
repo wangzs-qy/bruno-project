@@ -1,0 +1,24 @@
+meta {
+  name: 导入支付信息
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/importPayment
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTczMjMwODc2NX0.tFzP-Ds6BLH-Ki9B8gEECi3YR1xGXFIgpjto-YD0DuaNSh2HhhzuBO7F6pGtvpvdGdfTwy76p7jOrysji-iZVBc3cO910bidsJT7YzoL_ni07D5OKHvBkeKiFZkwAy37RzXkAoW_PM29Zu25WDb7Rx0BqnSHkKIhSc2pBnYkxhm-eYUOXRi7lt1eJoiT2NrlxeC47v47eBsSzCT4OtlJKCvkoAnQfkSiGvSJTP9EY_hUNaVGdvS91wHvwbDD4y5kD5hOQx8797-SdTo7eMnFSsUvzOeha1W0sy-hil0hkaHbaf-LUavdm_PPsJsVzXEbi0gZwoGhEDhZOI7mMfbVjg
+  placement: header
+}
+
+body:multipart-form {
+  file: @file(/C:/Users/Administrator/Downloads/2024.10.01_2024.10.07跨境通税金汇总.xlsx)
+  importType: 3
+  paymentPort: SZXGTW
+  paymentDate: 2024-08-16
+}

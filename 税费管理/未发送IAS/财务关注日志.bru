@@ -1,0 +1,28 @@
+meta {
+  name: 财务关注日志
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/pending-ias-info/querySystemLogList
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "awbNo": "2226242852",
+      "endDateTime": "2025-02-14 14:14:41",
+      "startDateTime": "2025-02-07 14:14:41",
+      "archive": "live"
+  }
+}

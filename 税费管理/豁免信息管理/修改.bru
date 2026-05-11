@@ -1,0 +1,28 @@
+meta {
+  name: 修改
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-exempt-management/edit
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "id": "F8C0B539-3BDC-42E2-91A8-1949E4887991",
+    "exemptCode": "0130",
+    "exemptName": "易货贸易",
+    "gtwId":"CANGTW",
+    "reductionItem": "BN",
+    "type": 2
+  }
+}

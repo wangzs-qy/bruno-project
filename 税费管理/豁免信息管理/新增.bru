@@ -1,0 +1,27 @@
+meta {
+  name: 新增
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-exempt-management/save
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "exemptCode": "1233",
+    "exemptName": "保税仓库货物",
+    "gtwId":"CANGTW",
+    "reductionItem": "BN",
+    "type": 2
+  }
+}

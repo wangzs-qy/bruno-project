@@ -1,0 +1,25 @@
+meta {
+  name: 工作完成
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/pending-ias-info/taskCompleted
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesIdList": [
+          "D5398529-ECC3-4368-A10A-1C5E1BB6776E"
+      ]
+  }
+}

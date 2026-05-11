@@ -1,0 +1,24 @@
+meta {
+  name: 更新海关审批号
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/discardBatch/updateCustomsApprovalNo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "batchId": "4de1b710-1de5-4895-9584-e485e9a9bac6",
+      "customsApprovalNo": "124657897945213"
+  }
+}

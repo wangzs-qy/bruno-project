@@ -1,0 +1,22 @@
+meta {
+  name: 设置税费差额提醒配置
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/set-tax-difference-reminder?itemValue=1&gtwId=CANGTW
+  body: none
+  auth: apikey
+}
+
+params:query {
+  itemValue: 1
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

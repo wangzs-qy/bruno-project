@@ -1,0 +1,27 @@
+meta {
+  name: 运单详情：分运单信息、发件人信息、收件人信息、包装信息
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/base/expressDetail/query/ib/findWaybillDetail?declarationWaybillId=2931eeff-e8b1-4215-baf6-5124a4e41f4e&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: 2931eeff-e8b1-4215-baf6-5124a4e41f4e
+  archive: live
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

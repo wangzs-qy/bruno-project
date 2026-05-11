@@ -1,0 +1,32 @@
+meta {
+  name: 查询减免客户账号基础数据
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryReductionAccount
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "reductionAccountList": [
+      {
+        "dutyAcct": "600238076",
+        "reductionItem": "BN"
+      },
+      {
+        "dutyAcct": "600270263",
+        "reductionItem": "BN"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: 编辑多条目录入费配置
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-manage/edit-multi-entry-fee
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "id": "DBC90BB7-CF6F-41EC-91CC-5B04DDD329F9",
+    "clearanceType": "D",
+    "threshold": 10,
+    "chargeStandard": "1"
+  }
+}

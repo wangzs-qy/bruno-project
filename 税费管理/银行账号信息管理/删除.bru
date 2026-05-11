@@ -1,0 +1,25 @@
+meta {
+  name: 删除
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-clearance-outOfScope/delete
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "ids": [
+      "FB30DBAD-9E6C-4E74-93E1-3A229DECDE46"
+    ]
+  }
+}

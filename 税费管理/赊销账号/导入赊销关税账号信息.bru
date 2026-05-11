@@ -1,0 +1,21 @@
+meta {
+  name: 导入赊销关税账号信息
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-credit-tariff-account/import-credit-account
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:multipart-form {
+  file: @file(/C:/Users/Administrator/Desktop/赊销关税账号导入模板-错误数据.xlsx)
+}

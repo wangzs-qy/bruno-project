@@ -1,0 +1,25 @@
+meta {
+  name: 发送IAS前置校验
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/pending-ias-info/sendIasCalibration
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesIdList": [
+          "18978EFA-9BD3-4FB7-8469-F87E7E071008"
+      ]
+  }
+}

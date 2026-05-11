@@ -1,0 +1,21 @@
+meta {
+  name: 获取邮箱
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/getEmail?gtwId=CANGTW
+  body: none
+  auth: apikey
+}
+
+params:query {
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

@@ -1,0 +1,23 @@
+meta {
+  name: 获取SDCM运单详情信息
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/find-sdcm-waybill-info?archive=live&awbNo=1173934742
+  body: none
+  auth: apikey
+}
+
+params:query {
+  archive: live
+  awbNo: 1173934742
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

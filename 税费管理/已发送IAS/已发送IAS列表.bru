@@ -1,0 +1,37 @@
+meta {
+  name: 已发送IAS列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/peding-ias-info/listSendIas
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "nextFlag": false,
+      // "sendIasUser": "wangzs",
+      "selfPickUp": 0,
+      "statusList": [
+          2
+      ],
+      // "awbNoList":["6274013631"],
+      "sort": [
+          {
+              "field": "differenceAmount",
+              "isAsc": 1
+          }
+      ]
+  }
+}

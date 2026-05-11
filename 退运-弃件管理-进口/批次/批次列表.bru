@@ -1,0 +1,27 @@
+meta {
+  name: 批次列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/discardBatch/getBatchInfo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "gtwId": "PVGHUB",
+      "businessType": 1,
+      "customsApprovalNo": "124657897945213"
+  }
+}

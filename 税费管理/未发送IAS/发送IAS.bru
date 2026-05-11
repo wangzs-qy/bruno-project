@@ -1,0 +1,25 @@
+meta {
+  name: 发送IAS
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/pending-ias-info/sendIas
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+      "taxesIdList": [
+          "08D8404D-5204-43D1-BD08-8578537D7E79"
+      ]
+  }
+}

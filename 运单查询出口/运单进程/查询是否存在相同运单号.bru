@@ -1,0 +1,21 @@
+meta {
+  name: 查询是否存在相同运单号
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/queryWaybillProcessSameAwbNo?awbNo=1239838316
+  body: none
+  auth: apikey
+}
+
+params:query {
+  awbNo: 1239838316
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

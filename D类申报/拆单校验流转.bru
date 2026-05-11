@@ -1,0 +1,30 @@
+meta {
+  name: 拆单校验流转
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/highvalue/dec/checkSplitFlow
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "awbNoList": [
+      "2774885223"
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

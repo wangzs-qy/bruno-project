@@ -1,0 +1,21 @@
+meta {
+  name: 删除发票类型
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/delete-invoice-type
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  ["DEEF3A1B-02AF-47D5-BBFE-73F29CAA6C41"]
+}

@@ -1,0 +1,31 @@
+meta {
+  name: 批量获取拆单号
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/highvalue/dec/batchGetSplitNo
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "awbNo": "7602630291",
+      "splitNum": "2"
+    }
+  ]
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

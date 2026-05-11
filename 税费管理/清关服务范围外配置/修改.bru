@@ -1,0 +1,28 @@
+meta {
+  name: 修改
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-clearance-outOfScope/edit
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "id": "3A11B38E-BCE0-4E74-8663-4AAD11B12549",
+    "gtwId": "ANY",
+    "customerCode": "0000",
+    "tradeMode": "0200",
+    "marginGuarantee": "ANY",
+    "reductionReasons": 2
+  }
+}

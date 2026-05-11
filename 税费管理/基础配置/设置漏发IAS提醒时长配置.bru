@@ -1,0 +1,22 @@
+meta {
+  name: 设置漏发IAS提醒时长配置
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/set-missed-send-ias-reminder?itemValue=0&gtwId=CANGTW
+  body: none
+  auth: apikey
+}
+
+params:query {
+  itemValue: 0
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

@@ -1,0 +1,51 @@
+meta {
+  name: 表体列表
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/queryAllBody
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 200,
+    "taskStatus": 5,
+    "nextFlag": false,
+    "confirmOrderTimeStart": "",
+    "confirmOrderTimeEnd": "",
+    "confirmOrderUser": "",
+    "warehouseLocation": null,
+    "pdCntnCd": "",
+    "glPdCntnCd": "",
+    "businessType": "C",
+    "declarationMawbIdList": [],
+    "awbNoList": [
+      "6249669672"
+    ],
+    "declarationMawbNoList": [
+      "Dummy"
+    ],
+    "checkMoldList": [],
+    "flightNoList": [],
+    "thirdPartyMarkingMarklist": [],
+    "stockStatusList": [],
+    "clearanceTypeList": [],
+    "clearanceSubTypeList": [],
+    "clearanceStatusList": [],
+    "selfPickUp": null,
+    "holdPapers": null,
+    "tradeName": "",
+    "gtwId": "PVGHUB"
+  }
+}

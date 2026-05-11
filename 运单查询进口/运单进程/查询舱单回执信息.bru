@@ -1,0 +1,23 @@
+meta {
+  name: 查询舱单回执信息
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/base/waybillQuery/ib/queryManiFestInfo?archive=live&declarationHeaderId=95216100-3b5d-4713-b95f-47917dd8e002
+  body: none
+  auth: apikey
+}
+
+params:query {
+  archive: live
+  declarationHeaderId: 95216100-3b5d-4713-b95f-47917dd8e002
+  ~archive: history
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

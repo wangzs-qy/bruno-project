@@ -1,0 +1,24 @@
+meta {
+  name: 判断该文件名称是否重复导入
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/import_payment_info/duplicateImportCheck
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "fileName": "C改D类.xlsx",
+      "importType": 1
+  }
+}

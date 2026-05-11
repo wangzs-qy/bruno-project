@@ -1,0 +1,35 @@
+meta {
+  name: 列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-exempt-management/paged-list
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 50,
+    "id": "",
+    "exemptCode": "0130",
+    "type": 2,
+    "gtwId": "",
+    "reductionItem": "BN",
+    "sort": [
+      {
+        "field": "gtwId",
+        "isAsc": 1
+      }
+    ]
+  }
+}

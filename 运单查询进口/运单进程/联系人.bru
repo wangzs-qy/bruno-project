@@ -1,0 +1,27 @@
+meta {
+  name: 联系人
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/base/waybillQuery/ib/contactList?declarationWaybillId=b888dc65-f363-46de-be11-7fa1a3b6a880&archive=live
+  body: none
+  auth: apikey
+}
+
+params:query {
+  declarationWaybillId: b888dc65-f363-46de-be11-7fa1a3b6a880
+  archive: live
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

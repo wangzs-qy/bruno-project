@@ -1,0 +1,29 @@
+meta {
+  name: 创建现场查验
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/abnormal/ob/service/abnormal/ob/declare/declareCheckRest/addDeclareCheckTaskBatch
+  body: json
+  auth: none
+}
+
+headers {
+  x-server-token: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhYm5vcm1hbC1vYiIsImNsaWVudElkIjoiYWJub3JtYWwtb2IiLCJhcHBsaWNhdGlvbk5hbWUiOiJhYm5vcm1hbC1vYiIsInNlcnZlckluZm8iOnsic2VydmVySWQiOiJhYm5vcm1hbC1vYiIsImFwcGxpY2F0aW9uTmFtZSI6ImFibm9ybWFsLW9iIiwidG9rZW4iOm51bGx9LCJleHAiOjE3NjE4OTU4MjZ9.LYT4KF8oMKwXDO3vChDbc_oPHnrv-TPK07mEqHe5zmYMWIbivGswAgTF97DZo6Hz0jxhE5OTQeKhhJTLEJuREvZHWgxLpK4Jjgt8oELawW-PWfarTQACOmLFkihX7gkD8Gu9TjYL6fXupqZGLPIOthSVGV72Rf4UA8ZUxO9rXz1VNdUBcIcJAs075APVWXoigl1VRchPEs-zpk3MgmugPdHNudEyl1TVqKg7SMaw3DQMlvOgxpQsvAAI95WHsGw59sXjQc9k_ubFyz8Hccr6yEIYZfXTxz5tZaXkkFP6WieXESsLwQCW1beFHb0potIiBv195iWpVU-VQldugrW6iw
+}
+
+body:json {
+  {
+    "taskIdDtoList": [
+      {
+        "declarationWaybillId": "24db8011-df22-4104-934a-1e3c86b9fa46",
+        "taskNo": "Osc20251029374171070691069952",
+        "flowReason": "实货查验",
+        "flowRemark": null
+      }
+    ],
+    "operatorId": "system"
+  }
+}

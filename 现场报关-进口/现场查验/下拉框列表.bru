@@ -1,0 +1,48 @@
+meta {
+  name: 下拉框列表
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/getTypeCodeValueSelect
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "checkMoldList": [],
+    "flightNoList": [],
+    "thirdPartyMarkingMarklist": [],
+    "stockStatusList": [],
+    "taskStatus": 5,
+    "clearanceStatusList": [],
+    "gtwId": "PVGHUB",
+    "businessType": "C",
+    "confirmOrderTimeStart": "",
+    "confirmOrderTimeEnd": "",
+    "confirmOrderUser": "",
+    "warehouseLocation": null,
+    "pdCntnCd": "",
+    "glPdCntnCd": "",
+    "declarationMawbIdList": [
+      "2D5F07C8-045C-4CCD-BF42-1C642422187F"
+    ],
+    "awbNoList": [],
+    "declarationMawbNoList": [
+      "54658180509"
+    ],
+    "clearanceTypeList": [],
+    "clearanceSubTypeList": [],
+    "selfPickUp": null,
+    "holdPapers": null,
+    "tradeName": ""
+  }
+}

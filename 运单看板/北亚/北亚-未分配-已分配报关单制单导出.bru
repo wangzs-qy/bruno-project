@@ -1,0 +1,33 @@
+meta {
+  name: 北亚-未分配/已分配报关单制单导出
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/export/dashboard/exportDecEditGroupFlightsArea
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["PVGHUB"],
+    "groupName": "D类审单客联一站式",
+    "assignedStatus": 2
+  }
+}

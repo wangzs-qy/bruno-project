@@ -1,0 +1,17 @@
+meta {
+  name: 查询报单回执信息
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/queryDeclarationInfo?declarationHeaderId=0320832f-1118-4399-99cb-32996498b665&archive=live
+  body: none
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 0320832f-1118-4399-99cb-32996498b665
+  archive: live
+  ~archive: history
+}

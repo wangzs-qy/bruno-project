@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "运单看板",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

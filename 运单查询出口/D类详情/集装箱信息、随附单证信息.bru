@@ -1,0 +1,23 @@
+meta {
+  name: 集装箱信息、随附单证信息
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host}}/api/base/decDetail/query/getContainerLicense?declarationHeaderId=00759F90-1752-47BB-A89F-6CFE12D09186&archive=history
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 00759F90-1752-47BB-A89F-6CFE12D09186
+  archive: history
+  ~archive: live
+}
+
+body:json {
+  {
+      "declarationHeaderId" : "0020AC3F-F89A-4C2C-82CE-665E17953854"
+  }
+}

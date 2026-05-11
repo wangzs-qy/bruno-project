@@ -1,0 +1,21 @@
+meta {
+  name: 导入减免客户账号信息
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-reduction-account/import-reduction
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:multipart-form {
+  file: @file(C:\Users\Administrator\Desktop\减免客户账号导入模板.xlsx)
+}

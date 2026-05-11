@@ -1,0 +1,168 @@
+meta {
+  name: 费用调减
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/adjust
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyOTczMDE0OX0.pctjZUAchkoA4KcmJCDmGpMIjFWa3alMYhAcZy4v4DWrDXt7jfPZXYko6Xhcck5p8it3rSjSl72omhH1ZUHS0F8NyZdoNtaLVtELC34k6_I0hZXsEwsFfQhydtg88qftPWkmyARtfkLSc7DVS4RNlD1uEP941TEgc6uo5UKtT1S1g1it-ny8Iaeg7DGWC0Tn-czz47tgdFznqYs5Ok-gIKds7Vmg4XWqAELkbIjRrvtDm4etsl4ZYZRC06GM_SKNbhRbFEcUNzrtu2gXyc7W3Q9RM5X6-2eo4mZ7BNL8EMNusHMEAj2llvrl-mcry4y_q15yy8ttKjd07CS2llo7KQ
+  placement: header
+}
+
+body:json {
+  {
+      "taxesId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+      "recipient": "jingjingwei@dhl.com",
+      "cc": "jingjingwei@dhl.com",
+      "expenseListDtolist": [
+          {
+              "expenseId": "0F8E4291-7AAE-4900-83E6-A2110DC3FD33",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "PGC2D16",
+              "taxesName": "行李物品",
+              "iasFeeCode": "PGC2",
+              "invoiceType": 1,
+              "feeAmount": 16,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 09:41:19",
+              "operator": "ibweijj",
+              "id": "0F8E4291-7AAE-4900-83E6-A2110DC3FD33"
+          },
+          {
+              "expenseId": "227440FF-799B-4D67-8A64-9D20B06FFFCF",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "PGC2D03",
+              "taxesName": "反补贴关税",
+              "iasFeeCode": "PGC2",
+              "invoiceType": 1,
+              "feeAmount": 45,
+              "remark": null,
+              "adjustedAmount": "43",
+              "updateTime": "2024-10-22 16:51:20",
+              "operator": "wangzs",
+              "id": "227440FF-799B-4D67-8A64-9D20B06FFFCF",
+              "oldOperator": "system",
+              "oldUpdateTime": "2024-10-16 10:06:00"
+          },
+          {
+              "expenseId": "2F91B04D-1E9A-4892-A4B7-233A944ACDBB",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "ADDY01",
+              "taxesName": "反倾销关税",
+              "iasFeeCode": "ADD",
+              "invoiceType": 0,
+              "feeAmount": 23,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "2F91B04D-1E9A-4892-A4B7-233A944ACDBB"
+          },
+          {
+              "expenseId": "49841489-D735-41C8-9B5E-7CFD9F862A98",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "MLE",
+              "taxesName": "多条目清关录入",
+              "iasFeeCode": "MLE",
+              "invoiceType": 1,
+              "feeAmount": 56,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 09:42:04",
+              "operator": "ibweijj",
+              "id": "49841489-D735-41C8-9B5E-7CFD9F862A98"
+          },
+          {
+              "expenseId": "5DCB9B8B-4700-488B-9647-98AE5F697BCD",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "GSTTD01",
+              "taxesName": "消费税",
+              "iasFeeCode": "GSTT",
+              "invoiceType": 1,
+              "feeAmount": 45,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "5DCB9B8B-4700-488B-9647-98AE5F697BCD"
+          },
+          {
+              "expenseId": "79B3D1A3-92E2-49F8-8B93-DA48C8A1D7B8",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "PGC2D01",
+              "taxesName": "关税",
+              "iasFeeCode": "PGC2",
+              "invoiceType": 1,
+              "feeAmount": 23,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "79B3D1A3-92E2-49F8-8B93-DA48C8A1D7B8"
+          },
+          {
+              "expenseId": "7DDED709-A1EB-429D-B91C-F6177DC1FD13",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "PLDTD01",
+              "taxesName": "增值税",
+              "iasFeeCode": "PLDT",
+              "invoiceType": 1,
+              "feeAmount": 53,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "7DDED709-A1EB-429D-B91C-F6177DC1FD13"
+          },
+          {
+              "expenseId": "8A4F2B80-65F5-45CA-A368-1C41FFAD1979",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "PGC2D15",
+              "taxesName": "行邮税",
+              "iasFeeCode": "PGC2",
+              "invoiceType": 1,
+              "feeAmount": 45,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "8A4F2B80-65F5-45CA-A368-1C41FFAD1979"
+          },
+          {
+              "expenseId": "C40E8197-4251-44FA-AF02-3C00BCEC4BEE",
+              "taxesInfoId": "BE8FF30F-47F8-4C8B-96B3-DC0711EE12C7",
+              "declarationHeaderId": "daa43db9-cdca-4281-ad06-90101a78022b",
+              "lcaCode": "CMISD01",
+              "taxesName": "废旧基金",
+              "iasFeeCode": "CMIS",
+              "invoiceType": 1,
+              "feeAmount": 21,
+              "remark": null,
+              "adjustedAmount": null,
+              "updateTime": "2024-10-16 10:06:00",
+              "operator": "system",
+              "id": "C40E8197-4251-44FA-AF02-3C00BCEC4BEE"
+          }
+      ],
+      "originTotalAmount": 327,
+      "adjustTotalAmount": 325,
+      "adjustAmount": "-2.00",
+      "supplementaryInfo": "12312312312323231231231231231232323123123123123123232312312312312312323231231231231231232323123123123123123232312312312312312323231231231231231232323123123123123123232312312312312312323231231231231231232323123123123123123232312312312312312323231231231231231232323123123123123123232312312312312312323231231231231231232323123"
+  }
+}

@@ -1,0 +1,23 @@
+meta {
+  name: 删除
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-financial-lock-account/delete
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  [
+      "C9D0B456-A163-4979-859F-C41888C8F647"
+  ]
+}

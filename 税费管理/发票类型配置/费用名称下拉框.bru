@@ -1,0 +1,17 @@
+meta {
+  name: 费用名称下拉框
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/listFeeName
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}

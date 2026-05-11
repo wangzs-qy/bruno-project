@@ -1,0 +1,29 @@
+meta {
+  name: 创建现场查验
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/service/abnormal/ib/declare/declareCheckRest/addDeclareCheckTaskBatch
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "taskIdDtoList": [
+      {
+        "declarationWaybillId": "d42f7be1-cf94-4a91-9ea3-0613bc00d5aa",
+        "taskNo": "IbEsdp20250822349595486111727616",
+        "flowCount": 1
+      }
+    ]
+  }
+}

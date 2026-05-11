@@ -1,0 +1,31 @@
+meta {
+  name: 获取发票类型
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/get-invoice-type?gtwId=CANGTW
+  body: json
+  auth: apikey
+}
+
+params:query {
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "gtwId": "CANGTW",
+      "declarationType": "B",
+      "clearanceType": "B1",
+      "feeName": "关税",
+      "invoiceType": 0
+  }
+}

@@ -1,0 +1,28 @@
+meta {
+  name: 编辑发票类型
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-manage/edit-invoice-type
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "id": "DEEF3A1B-02AF-47D5-BBFE-73F29CAA6C41",
+      "gtwId": "CANGTW",
+      "declarationType": "B",
+      "clearanceType": "B1",
+      "feeName": "关税",
+      "invoiceType": 0
+  }
+}

@@ -1,0 +1,31 @@
+meta {
+  name: 北亚-报关单制单总看板
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/dashboard/decEdit/statisticsDecEditPvgDashboard
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["PVGHUB"]
+  }
+}

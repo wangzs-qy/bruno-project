@@ -1,0 +1,32 @@
+meta {
+  name: 南方区-航班未分配报关单制单导出
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/export/dashboard/exportDecEditGroupFlights
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["CANGTW", "XNMGTW", "CTUGTW", "WUHGTW"],
+    "groupName": ""
+  }
+}

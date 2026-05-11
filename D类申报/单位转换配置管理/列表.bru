@@ -1,0 +1,28 @@
+meta {
+  name: 列表
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/high-value/unit-conversions/query
+  body: json
+  auth: apikey
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "pageNum": 1,
+    "pageSize": 10
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: 录入查验结果
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/inspection/enterCheckResult
+  body: multipartForm
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {"clearanceTypeList":[],"gtwId":"CANGTW"}
+}
+
+body:multipart-form {
+  checkResultContent: {"awbNoList":["6322830625","4212504251"],"checkType":1,"checkRemark":"123213123","secondStateCode":"OCR","secondStateCodeDesc":"OCR-第三方制单软件制单完成","businessType":"C","gtwId":"PVGHUB"} @contentType(application/json)
+  ~declareCheckFiles: @file(C:\Users\Administrator\Desktop\8480335010.jpg)
+}
+
+body:file {
+  file: @file()
+}

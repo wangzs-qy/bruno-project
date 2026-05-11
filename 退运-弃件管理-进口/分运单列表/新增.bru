@@ -1,0 +1,32 @@
+meta {
+  name: 新增
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/abnormal/ib/discardWaybill/addDeclareCheckTaskBatch
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "taskIdDtoList": [
+          {
+              "declarationWaybillId": "35890f06-ab23-4aa0-a4da-49ef6b4b5aef",
+              "taskNo": "IbMdp20240912224912792741019648",
+              "flowReason": "转第三方报关软件制单完成",
+              "flowRemark": null
+          }
+      ],
+      "taskType": "IB_ABANDONED",
+      "operator": "wangzs"
+  }
+}

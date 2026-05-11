@@ -1,0 +1,17 @@
+meta {
+  name: 未发送IAS列表合计
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/pending-ias-info/notSendIasStatistics
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

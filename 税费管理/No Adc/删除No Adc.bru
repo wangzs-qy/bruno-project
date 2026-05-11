@@ -1,0 +1,23 @@
+meta {
+  name: 删除No Adc
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-no-adc/delete-no-adc
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  [
+      "27F92FF1-38E9-4F28-A317-DEF5200782B6"
+  ]
+}

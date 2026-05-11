@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "现场报关-进口",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

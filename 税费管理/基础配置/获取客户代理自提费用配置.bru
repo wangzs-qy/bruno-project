@@ -1,0 +1,21 @@
+meta {
+  name: 获取客户代理自提费用配置
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/duty/taxes-manage/get-customer-agent-self-fee?gtwId=CANGTW
+  body: none
+  auth: apikey
+}
+
+params:query {
+  gtwId: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}

@@ -1,0 +1,26 @@
+meta {
+  name: 进口客户端登录
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/manage/users/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "ldapUuid": "wangzs",
+      "password": "1"
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      var jsonData = res.getBody();
+      console.log(jsonData)
+      bru.setGlobalEnvVar("cicp_token_ib", jsonData.data.token);
+  });
+}

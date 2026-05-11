@@ -1,0 +1,17 @@
+meta {
+  name: 查询运单进程表头
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{Gateway Host}}/api/base/waybillQuery/queryWaybillProcessHeader?declarationWaybillId=0320832f-1118-4399-99cb-32996498b665&archive=live
+  body: none
+  auth: none
+}
+
+params:query {
+  declarationWaybillId: 0320832f-1118-4399-99cb-32996498b665
+  archive: live
+  ~archive: history
+}

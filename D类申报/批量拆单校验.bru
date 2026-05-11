@@ -1,0 +1,35 @@
+meta {
+  name: 批量拆单校验
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/high/ob/highvalue/dec/verifyBatchSplitDec
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "type": 2,
+    "tab": "editMy",
+    "splitItemDtos": [
+      {
+        "awbNo": "7602630291",
+        "splitCount": 1
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

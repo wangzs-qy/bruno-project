@@ -1,0 +1,30 @@
+meta {
+  name: 上传附件-OB
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/file/temp/temp-upload
+  body: multipartForm
+  auth: apikey
+}
+
+headers {
+  x-request-id: 34584953-f9ce-46f0-a1b6-c6d215561981
+  ~Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJGSUxFLUFSQ0hJVkUtQVBJIiwiaWF0IjoxNzE1ODI4ODkxLCJleHAiOjE3MTU4MzI0OTEsImRobF9pbWQiOiJ7XCJ1aWRcIjpcInNydl9jbmV4cF9jZGNwX3VhdFwifSJ9.ymeUFmVMFrUvP4fAERdYKk6J2rXwXJuSDqvYMVTldxpwS42ruDs0gVPePamHfXvpLGQqp3DLoUB7xYPa0w3Ntw
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:multipart-form {
+  templateCode: HIGH_VALUE_BATCH_SPLIT_NUM_TEMPLATE
+  user: system
+  overwrite: N
+  moduleCode: HIGH_VALUE
+  file: @file(F:\huimor\project\批量拆单-件重.xlsx)
+}

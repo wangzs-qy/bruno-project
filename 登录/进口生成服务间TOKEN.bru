@@ -1,0 +1,26 @@
+meta {
+  name: 进口生成服务间TOKEN
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/manage/openApi/auth/generateServerToken
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "consumerCode": "clearance-assignment-ib",
+      "consumerKey": "uaq07r03q2yct76unz1a"
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      var jsonData = res.getBody();
+      console.log(jsonData)
+      bru.setGlobalEnvVar("cicp_server_token_ib", jsonData.data.token);
+  });
+}

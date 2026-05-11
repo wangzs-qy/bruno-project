@@ -1,0 +1,21 @@
+meta {
+  name: 现场交单CQP工作完成
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/service/abnormal/ib/declare/submissonRest/immediatelyWorkComplete?taskNum=IbOsd20250819348432365359792214
+  body: none
+  auth: apikey
+}
+
+params:query {
+  taskNum: IbOsd20250819348432365359792214
+}
+
+auth:apikey {
+  key: x-server-token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGVhcmFuY2UtYXNzaWdubWVudC1pYiIsImNsaWVudElkIjoiY2xlYXJhbmNlLWFzc2lnbm1lbnQtaWIiLCJhcHBsaWNhdGlvbk5hbWUiOiJjbGVhcmFuY2UtYXNzaWdubWVudC1pYiIsInNlcnZlckluZm8iOnsic2VydmVySWQiOiJjbGVhcmFuY2UtYXNzaWdubWVudC1pYiIsImFwcGxpY2F0aW9uTmFtZSI6ImNsZWFyYW5jZS1hc3NpZ25tZW50LWliIiwidG9rZW4iOm51bGx9LCJleHAiOjE3NTYxNzk1MTV9.PE4kdXkmpxoowWNlIr35OCSfR4wu_R_fTdMoRm0paajFUObQ4C5OVV1xbVGNl8R6nLqV_E06ESz2wOYaLT91VfHCvm6AdF8TjjPAukL0jWx7hWbEPSia5G7hEiudNGr9yGOm-GNwZwQ2ryYXodW7BkZO7YhnI9W8IFtSlHNJRUVuAKJQUaAy7BNRW3_vY2_ddfkxTWBNDeCFJUQS2vVB9hq4snjCxfDHmbM5V4jd4kfRqdrTO-83DxuyujGCsel8-nADFXvfgq51Kale7guqrwIlgA1mTTBgh9uQP4WScj5U4qbshkN9R8TyAe-09-nc_icKrmvq_LYe1szqcdY0Tw
+  placement: header
+}

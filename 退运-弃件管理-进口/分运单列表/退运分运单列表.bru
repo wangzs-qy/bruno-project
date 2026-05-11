@@ -1,0 +1,47 @@
+meta {
+  name: 退运分运单列表
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/abnormal/ib/discardWaybill/getReturnWaybill
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTc0NTAwMzc3N30.M_iMpnKCJOFnoVpI2cQxIzDLomjyV-1m8F_Rj5Acz5yyGJG5W7QzEuwkVjlam2hHs-PBrS0h3gDEsYcGe34tFYtf6sm7izCZOTgHU49Nza9yeRmQaqRwyxycdFp_emME8Ca7-mRmAxza5KvTTeIQk-punJk3BXFk9chhx67wb7MC4UTVkUondu6YQ3Cvg33zonsFhF6F584waPamcmqU0TWqKpsLfIRBBGeYd2BMXRIZ2mv0Lgym2HGubKSvomXCRQwiSBQouPhqXjLzwf9AWgOopmU9bwQCoTNhm9HTleOXB0ZFA2YB0XDA19U1CFuBujHFsRwkwyUzh-ArMpIsHw
+  placement: header
+}
+
+body:json {
+  {
+      "gtwId": "PEKGTW",
+      "pageNum": 1,
+      "pageSize": 50,
+      "nextFlag": false,
+      "ibAwbNoList": [],
+      "ibClearanceSubTypeList": [],
+      "obAwbNoList": [],
+      "obClearanceTypeList": [],
+      "obClearanceSubTypeList": [],
+      "statusSignList": [],
+      "punishSign": "",
+      "ibFlightDateStart": "",
+      "ibFlightDateEnd": "",
+      "ibFlightNo": "",
+      "ibMawbNo": "",
+      "obFlightDateStart": "",
+      "obFlightDateEnd": "",
+      "obFlightNo": "",
+      "obMawbNo": "",
+      "sort": [],
+      "returnDiscardBatchInfoIdList": [
+          "18163423-6db6-4329-80a6-6b3c582ef9bc"
+      ],
+      "total": 3,
+      "pages": 1
+  }
+}

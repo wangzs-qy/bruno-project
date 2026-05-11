@@ -1,0 +1,43 @@
+meta {
+  name: LcaCode下拉框
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/listTaxesCode?gtwId=CANGTW&declarationType=D
+  body: json
+  auth: apikey
+}
+
+params:query {
+  gtwId: CANGTW
+  declarationType: D
+  ~taxesFeeInfoId: 56399734-DE53-49D0-8C2A-EFE3FCB638E7
+  ~dutyService: CANGTW
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "entryDuty": {
+          "billNo": "11263517",
+          "assBillNo": "9609676801",
+          "ieFlag": "I",
+          "entryId": "345621725268252528",
+          "opTime": "20240905141835",
+          "realDuty": null,
+          "realTax": 10,
+          "realReg": null,
+          "realAnti": null,
+          "realRsv1": null,
+          "realRsv2": null,
+          "realNcad": 0.25
+      }
+  }
+}

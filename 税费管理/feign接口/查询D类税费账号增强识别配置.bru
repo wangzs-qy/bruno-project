@@ -1,0 +1,17 @@
+meta {
+  name: 查询D类税费账号增强识别配置
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/service/duty/ib/basic/data/queryEnhancedRecognition
+  body: none
+  auth: apikey
+}
+
+auth:apikey {
+  key: x-server-token
+  value: {{cicp_server_token_ib}}
+  placement: header
+}

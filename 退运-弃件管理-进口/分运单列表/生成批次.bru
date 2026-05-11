@@ -1,0 +1,27 @@
+meta {
+  name: 生成批次
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/abnormal/ib/discardWaybill/generateDiscardBatch
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ3YW5nenMiLCJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJ1c2VySW5mbyI6eyJsZGFwVXVpZCI6Indhbmd6cyIsIm5hbWUiOiJ3YW5nenMiLCJkZXBhcnRtZW50IjpudWxsLCJ0b2tlbiI6bnVsbH0sImV4cCI6MTcyOTExODM3M30.GnBXD0O7vztQXtOUpo18k6DWb7zQcYtOqF2zbNEdTJGUuN8u6Io_rxVhyHIc0XQMUrsVFg6LYkgz0R3NBbmvuiqQ1wDl1tfjj9aMZrbPWaZorvw3Q9rdvUxrbFfYU-b8GpsrelPG4IZQdkjCNsGKRJni-zVd-aCuzYPAjKl-_RCUP-PtxTPd2ON5_FRpqrVSekH51BPg7xoURGV8SXPOspb9xy-q9tmD5aNmbAYnlb3o8ctLIyW0G75KY31SKCYr5impUcrjAYT-jcAVY8KSc21rBQETtoedV91rBat6Xo4VTE3JbtgvyjfBrpyjfvVS0n842Tvl9qIO0fvSVNGEBw
+  placement: header
+}
+
+body:json {
+  {
+      "idList": [
+          "3C6D5AFE-0CF2-43FC-852C-8F323D215E05"
+      ],
+      "batchNumber": "2013",
+      "secondConfirm": false
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: 下拉框列表
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/submission/getTypeCodeValueSelect
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwId": "PVGHUB",
+    "presentationTypeList": [],
+    "taskStatus": 5
+  }
+}

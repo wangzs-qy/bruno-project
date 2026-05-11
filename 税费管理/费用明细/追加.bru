@@ -1,0 +1,23 @@
+meta {
+  name: 追加
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/expense-management/append
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "texesId": "5A20F911-04BF-4B30-BE72-147FDF6EF1F7"
+  }
+}

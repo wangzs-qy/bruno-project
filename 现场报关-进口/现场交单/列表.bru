@@ -1,0 +1,42 @@
+meta {
+  name: 列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/abnormal/ib/declare/submission/queryAllBody
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ib}}
+  placement: header
+}
+
+body:json {
+  {
+    "awbNoList": [],
+    "presentationTypeList": [],
+    "clearanceTypeList": [],
+    "clearanceSubTypeList": [],
+    "selfPickUp": null,
+    "taskRemark": "",
+    "clearanceStatus": "",
+    "confirmOrderUser": "",
+    "confirmOrderTimeEnd": "",
+    "confirmOrderTimeStart": "",
+    "pdCntnCd": "",
+    "glPdCntnCd": "",
+    "pageNum": 1,
+    "pageSize": 202,
+    "nextFlag": false,
+    "taskStatus": 5,
+    "gtwId": "PVGHUB",
+    "clearanceStatusList": [],
+    "total": 103,
+    "pages": 1
+  }
+}

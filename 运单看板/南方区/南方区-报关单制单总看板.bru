@@ -1,0 +1,31 @@
+meta {
+  name: 南方区-报关单制单总看板
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/dashboard/decEdit/statisticsDecEditDashboard
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["CANGTW", "XNMGTW", "CTUGTW", "WUHGTW"]
+  }
+}

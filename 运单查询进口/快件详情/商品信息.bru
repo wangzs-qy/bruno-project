@@ -1,0 +1,17 @@
+meta {
+  name: 商品信息
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{Gateway Host}}/api/base/expressDetail/query/ib/waybillDeclarationGoods?declarationHeaderId=4e06b1d0-513b-45dd-8b5e-ca50ae774706&archive=history
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationHeaderId: 4e06b1d0-513b-45dd-8b5e-ca50ae774706
+  archive: history
+  ~archive: live
+}

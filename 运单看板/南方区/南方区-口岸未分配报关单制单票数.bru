@@ -1,0 +1,32 @@
+meta {
+  name: 南方区-口岸未分配报关单制单票数
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{Gateway_Host_Ob}}/api/dashboard/dashboard/decEdit/statisticsDecEditGroupGtwGoodsMark
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~archive: history
+}
+
+headers {
+  sensitive: sensitive
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token_ob}}
+  placement: header
+}
+
+body:json {
+  {
+    "gtwIdList": ["CANGTW", "XNMGTW", "CTUGTW", "WUHGTW"],
+    "groupName": ""
+  }
+}

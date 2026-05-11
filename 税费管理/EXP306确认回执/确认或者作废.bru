@@ -1,0 +1,25 @@
+meta {
+  name: 确认或者作废
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{Gateway_Host_Ib}}/api/duty/import_payment_info/confirmOrVoid
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+    "exp306SummaryInfoId": "B9533223-4A5C-453F-B5BC-29E102DCA033",
+    "status": 1,
+    "dataStatus": 0
+  }
+}

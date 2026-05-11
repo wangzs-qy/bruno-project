@@ -1,0 +1,31 @@
+meta {
+  name: 列表
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Gateway Host Ib}}/api/duty/taxes-financial-lock-account/list
+  body: json
+  auth: apikey
+}
+
+auth:apikey {
+  key: X-User-Token
+  value: {{cicp_token}}
+  placement: header
+}
+
+body:json {
+  {
+      "pageNum": 1,
+      "pageSize": 50,
+      "account": "",
+      "sort": [
+          {
+              "field": "account",
+              "isAsc": 1
+          }
+      ]
+  }
+}

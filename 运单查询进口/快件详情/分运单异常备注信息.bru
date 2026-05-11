@@ -1,0 +1,17 @@
+meta {
+  name: 分运单异常备注信息
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{Gateway Host}}/api/base/expressDetail/query/ib/findAbnormalRemark?declarationWaybillId=80c7e5f5-7c5a-45f8-9724-b9cb5933c0ed&archive=history
+  body: json
+  auth: none
+}
+
+params:query {
+  declarationWaybillId: 80c7e5f5-7c5a-45f8-9724-b9cb5933c0ed
+  archive: history
+  ~archive: live
+}
